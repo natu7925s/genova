@@ -1,0 +1,43 @@
+# Rust標準の.gitignoreテンプレート
+
+# コンパイル成果物
+/target/
+
+# 一時ファイル
+**/*.rs.bk
+
+# バイナリファイル
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Cargo.lockはライブラリ開発以外はコミット推奨だよ
+# もしライブラリならコメントアウトしてね
+Cargo.lock
+
+# IDE関連（VSCode, IntelliJなど）
+.vscode/
+.idea/
+
+# 一時ファイル・ログ
+*.log
+*.tmp
+
+# テストカバレッジ関連
+.coverage/
+*.gcda
+*.gcno
+*.profraw
+
+# もしdockerとか使うなら追加してもOK
+# .dockerignore
+
+# MacのDS_Storeなど
+.DS_Store
+
+
+# Added by cargo
+
+/target
