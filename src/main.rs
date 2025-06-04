@@ -5,6 +5,9 @@ use std::path::Path;
 mod lexer;
 use lexer::{tokenize, Token};
 
+mod parser;
+use parser::Parser as GeneParser;
+
 #[derive(Parser)]
 #[command(author, version, about)]
 struct Cli {
@@ -54,9 +57,9 @@ fn main() {
                 println!("Build command: Successfully read the file.");
                 
                 let tokens = tokenize(&source_code);
-                for token in tokens {
-                    println!("{:?}", token);
-                }
+                let mut parser = GeneParser::new(tokens);
+                let ast = parser.parse();
+                println!("Parsed AST: {:?}", ast);
 
             } else {
                 std::process::exit(1);
