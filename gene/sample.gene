@@ -1,0 +1,12 @@
+gene greet {
+    inputs: [name]
+    outputs: [message]
+    logic:
+        message = "Hello, " + name
+}
+
+gene main {
+    logic:
+        express greet => msg
+        print(msg)
+}
