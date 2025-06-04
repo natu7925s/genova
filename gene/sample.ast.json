@@ -1,0 +1,51 @@
+[
+  {
+    "Gene": {
+      "name": "greet",
+      "inputs": [
+        "name"
+      ],
+      "outputs": [
+        "message"
+      ],
+      "logic": [
+        {
+          "Assignment": {
+            "var": "message",
+            "value": {
+              "BinaryOp": {
+                "left": {
+                  "StringLiteral": "Hello, "
+                },
+                "op": "+",
+                "right": {
+                  "Var": "name"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Gene": {
+      "name": "main",
+      "inputs": [],
+      "outputs": [],
+      "logic": [
+        {
+          "Express": {
+            "func_name": "greet",
+            "target": "msg"
+          }
+        },
+        {
+          "Print": {
+            "var": "msg"
+          }
+        }
+      ]
+    }
+  }
+]

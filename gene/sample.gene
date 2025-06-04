@@ -7,6 +7,6 @@ gene greet {
 
 gene main {
     logic:
-        express greet => msg
+        express greet(name) => msg
         print(msg)
 }
